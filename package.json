@@ -1,0 +1,37 @@
+{
+  "name": "grunt-cwebp",
+  "version": "0.1.1",
+  "description": "Convert JPG, PNG to WebP with grunt task.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1000ch/grunt-cwebp.git"
+  },
+  "author": "1000ch",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "bugs": {
+    "url": "https://github.com/1000ch/grunt-cwebp/issues"
+  },
+  "homepage": "https://github.com/1000ch/grunt-cwebp",
+  "keywords": [
+    "gruntplugin",
+    "webp"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.4.0"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "chalk": "^0.4.0",
+    "cwebp-bin": "^0.1.2",
+    "mkdirp": "^0.5.0"
+  }
+}
