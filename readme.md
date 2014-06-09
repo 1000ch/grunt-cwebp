@@ -2,7 +2,7 @@
 
 ## About
 
-Convert your JPG and PNG images to WebP.
+Convert JPG and PNG images to WebP with grunt task.
 
 [![Build Status](https://travis-ci.org/1000ch/grunt-cwebp.svg?branch=master)](https://travis-ci.org/1000ch/grunt-cwebp)
 [![NPM version](https://badge.fury.io/js/grunt-cwebp.svg)](http://badge.fury.io/js/grunt-cwebp)
