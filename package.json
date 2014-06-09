@@ -1,7 +1,7 @@
 {
   "name": "grunt-cwebp",
-  "version": "0.1.1",
-  "description": "Convert JPG, PNG to WebP with grunt task.",
+  "version": "0.1.2",
+  "description": "Convert JPG and PNG images to WebP with grunt task.",
   "repository": {
     "type": "git",
     "url": "git://github.com/1000ch/grunt-cwebp.git"
@@ -31,7 +31,7 @@
   "dependencies": {
     "async": "^0.9.0",
     "chalk": "^0.4.0",
-    "cwebp-bin": "^0.1.2",
+    "cwebp-bin": "^0.1.3",
     "mkdirp": "^0.5.0"
   }
 }
