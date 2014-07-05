@@ -11,8 +11,18 @@ Convert JPG and PNG images to WebP with grunt task.
 
 ## Install
 
+This plugin requires Grunt `~0.4.1`
+
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+
 ```sh
 $ npm install --save-dev grunt-cwebp
+```
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+```js
+grunt.loadNpmTasks('grunt-cwebp');
 ```
 
 ## Usage
@@ -44,6 +54,17 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-cwebp');
 };
 ```
+
+Files are compressed with [node-cwebp-bin](https://github.com/1000ch/node-cwebp-bin).
+
+## Options
+
+### ext
+
+Type: `String`  
+Default: `null`
+
+Setting output file extension.
 
 ## License
 
