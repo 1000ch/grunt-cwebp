@@ -41,6 +41,9 @@ module.exports = function (grunt) {
         }
       },
       dynamic: {
+        options: {
+          q: 50
+        },
         files: [{
           expand: true,
           cwd: 'src/', 
@@ -55,16 +58,16 @@ module.exports = function (grunt) {
 };
 ```
 
-Files are compressed with [node-cwebp-bin](https://github.com/1000ch/node-cwebp-bin).
+Files are processed with [node-cwebp-bin](https://github.com/1000ch/node-cwebp-bin), you can also pass any native lib options, like `q`.
 
 ## Options
 
-### ext
+### sameExt
 
-Type: `String`  
-Default: `null`
+Type: `Boolean`
+Default: `false`
 
-Setting output file extension.
+Set to `true`, if you want to leave original file extension after converting to webp.
 
 ## License
 
