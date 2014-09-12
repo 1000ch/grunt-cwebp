@@ -12,16 +12,12 @@ module.exports = function (grunt) {
   grunt.registerMultiTask('cwebp', 'Convert JPG, PNG to WebP with grunt task.', function() {
     var done = this.async();
     var options = this.options({});
-    var ownOptions = [
-        'ext'
+    var privateOptions = [
+        'sameExt'
     ];
 
     async.eachLimit(this.files, 10, function (file, next) {
-      var dest = file.dest;
-
-      if (options.ext) {
-        dest = dest.replace(path.extname(dest), options.ext);
-      }
+      var dest = options.sameExt ? file.dest : file.dest.replace(path.extname(file.dest), '.webp');
 
       // make directory if does not exist
       mkdirp.sync(path.dirname(dest));
@@ -31,7 +27,8 @@ module.exports = function (grunt) {
 
       // add options to args
       Object.keys(options).forEach(function (key) {
-        if (ownOptions.indexOf(key) === -1) {
+        // If options key is not private for Grunt task, pass in to lib args
+        if (privateOptions.indexOf(key) === -1) {
           args.push('-' + key);
           args.push(options[key]);
         }

@@ -7,9 +7,29 @@ module.exports = function (grunt) {
       static: {
         options: {},
         files: {
-          'tmp/test-png.webp': 'test/fixtures/test.png',
-          'tmp/test-jpg.webp': 'test/fixtures/test.jpg'
+          'tmp/static/test-png.webp': 'test/fixtures/test-png.png',
+          'tmp/static/test-jpg.webp': 'test/fixtures/test-jpg.jpg'
         }
+      },
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'test/fixtures', 
+          src: ['**/*.{png,jpg}'],
+          dest: 'tmp/dynamic'
+        }]
+      },
+      sameExt: {
+        options: {
+          sameExt: true,
+          q: 50
+        },
+        files: [{
+          expand: true,
+          cwd: 'test/fixtures', 
+          src: ['**/*.{png,jpg}'],
+          dest: 'tmp/same'
+        }]
       }
     },
     nodeunit: {
