@@ -71,4 +71,4 @@ Set to `true`, if you want to leave original file extension after converting to 
 
 ## License
 
-MIT
+MIT: http://1000ch.mit-license.org
