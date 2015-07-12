@@ -5,7 +5,7 @@ var mkdirp = require('mkdirp');
 var async = require('async');
 var chalk = require('chalk');
 var execFile = require('child_process').execFile;
-var cwebp = require('cwebp-bin').path;
+var cwebp = require('cwebp-bin');
 
 module.exports = function (grunt) {
 
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
           args.push(options[key]);
         }
       });
-      
+
       execFile(cwebp, args, function (error) {
         if (error) {
           grunt.warn(error);
