@@ -1,7 +1,5 @@
 # [grunt-cwebp](https://www.npmjs.org/package/grunt-cwebp)
 
-## About
-
 Convert JPG and PNG images to WebP with grunt task.
 
 [![Build Status](https://travis-ci.org/1000ch/grunt-cwebp.svg?branch=master)](https://travis-ci.org/1000ch/grunt-cwebp)
