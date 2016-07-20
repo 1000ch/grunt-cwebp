@@ -14,7 +14,7 @@ module.exports = function (grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'test/fixtures', 
+          cwd: 'test/fixtures',
           src: ['**/*.{png,jpg}'],
           dest: 'tmp/dynamic'
         }]
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'test/fixtures', 
+          cwd: 'test/fixtures',
           src: ['**/*.{png,jpg}'],
           dest: 'tmp/same'
         }]
@@ -39,9 +39,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
-
   grunt.loadTasks('tasks');
-
   grunt.registerTask('mkdir', grunt.file.mkdir);
   grunt.registerTask('test', [
     'clean',
