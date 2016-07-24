@@ -14,13 +14,14 @@ module.exports = grunt => {
     const privateOptions = ['sameExt'];
 
     async.eachLimit(this.files, 10, (file, next) => {
+      const src = file.src[0];
       const dest = options.sameExt ? file.dest : file.dest.replace(path.extname(file.dest), '.webp');
 
       // make directory if does not exist
       mkdirp.sync(path.dirname(dest));
 
       // create default args
-      const args = [file.src[0], '-o', dest];
+      const args = [src, '-o', dest];
 
       // add options to args
       Object.keys(options).forEach(key => {
@@ -36,11 +37,10 @@ module.exports = grunt => {
           grunt.warn(error);
           next(error);
         } else {
-          grunt.log.writeln(chalk.green('✔ ') + file.src[0] + ' was converted to ' + chalk.green(dest));
+          grunt.log.writeln(chalk.green('✔ ') + src + ' was converted to ' + chalk.green(dest));
           next();
         }
       });
-
     }, error => {
       if (error) {
         grunt.warn(error);
