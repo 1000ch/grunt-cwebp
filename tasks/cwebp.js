@@ -37,7 +37,7 @@ module.exports = grunt => {
           grunt.warn(error);
           next(error);
         } else {
-          grunt.log.writeln(chalk.green('✔ ') + src + ' was converted to ' + chalk.green(dest));
+          grunt.verbose.writeln(chalk.green('✔ ') + src + ' was converted to ' + chalk.green(dest));
           next();
         }
       });
