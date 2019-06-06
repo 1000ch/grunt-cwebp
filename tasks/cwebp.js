@@ -8,7 +8,7 @@ const execFile = require('child_process').execFile;
 const cwebp = require('cwebp-bin');
 
 module.exports = grunt => {
-  grunt.registerMultiTask('cwebp', 'Convert JPG, PNG to WebP with grunt task.', function() {
+  grunt.registerMultiTask('cwebp', 'Convert JPG, PNG to WebP with grunt task.', function () {
     const done = this.async();
     const options = this.options({});
     const privateOptions = ['sameExt'];
@@ -26,9 +26,12 @@ module.exports = grunt => {
       // add options to args
       Object.keys(options).forEach(key => {
         // If options key is not private for Grunt task, pass in to lib args
-        if (privateOptions.indexOf(key) === -1) {
+        if (privateOptions.indexOf(key) === -1 && options[key] !== false) {
           args.push(`-${key}`);
-          args.push(options[key]);
+
+          if (options[key] !== true) {
+            args.push(options[key]);
+          }
         }
       });
 

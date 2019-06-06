@@ -30,6 +30,19 @@ module.exports = function (grunt) {
           src: ['**/*.{png,jpg}'],
           dest: 'tmp/same'
         }]
+      },
+      lossless: {
+        options: {
+          q: 100,
+          m: 6,
+          lossless: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'test/fixtures',
+          src: ['**/*.{png,jpg}'],
+          dest: 'tmp/lossless'
+        }]
       }
     },
     nodeunit: {

@@ -40,7 +40,9 @@ module.exports = function (grunt) {
       },
       dynamic: {
         options: {
-          q: 50
+          q: 100,
+          m: 6,
+          lossless: true
         },
         files: [{
           expand: true,
@@ -56,7 +58,7 @@ module.exports = function (grunt) {
 };
 ```
 
-Files are processed with [node-cwebp-bin](https://github.com/1000ch/node-cwebp-bin), you can also pass any native lib options, like `q`.
+Files are processed with [node-cwebp-bin](https://github.com/1000ch/node-cwebp-bin), you can also pass any native lib options, like `q`. Native lib options which normally require no arguments (such as `lossless` or `low_memory`) can be passed in by setting their respective arguments to true.
 
 ## Options
 
