@@ -24,16 +24,16 @@
     "space": 2
   },
   "dependencies": {
-    "cwebp-bin": "^3.2.0",
-    "mkdirp": "^0.5.1",
-    "replace-ext": "^2.0.0",
-    "xo": "^0.32.1"
+    "cwebp-bin": "^6.1.1",
+    "mkdirp": "^1.0.4",
+    "replace-ext": "^2.0.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-nodeunit": "^2.1.0"
+    "grunt-contrib-nodeunit": "^2.1.0",
+    "xo": "^0.32.1"
   },
   "engines": {
     "node": ">=10"
