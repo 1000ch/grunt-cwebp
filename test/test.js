@@ -1,5 +1,4 @@
 'use strict';
-
 const fs = require('fs');
 
 exports.cwebp = {
@@ -21,16 +20,6 @@ exports.cwebp = {
   dynamicConvertJPG: test => {
     test.expect(1);
     test.ok(fs.existsSync('tmp/dynamic/test-jpg.webp'), 'static: should convert JPG images');
-    test.done();
-  },
-  sameConvertPNG: test => {
-    test.expect(1);
-    test.ok(fs.existsSync('tmp/same/test-png.png'), 'static: should convert PNG images');
-    test.done();
-  },
-  sameConvertJPG: test => {
-    test.expect(1);
-    test.ok(fs.existsSync('tmp/same/test-jpg.jpg'), 'static: should convert JPG images');
     test.done();
   }
 };

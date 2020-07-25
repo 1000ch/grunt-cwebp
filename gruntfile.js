@@ -21,7 +21,6 @@ module.exports = function (grunt) {
       },
       sameExt: {
         options: {
-          sameExt: true,
           q: 50
         },
         files: [{

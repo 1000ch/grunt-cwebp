@@ -1,4 +1,4 @@
-# [grunt-cwebp](https://www.npmjs.org/package/grunt-cwebp)
+# grunt-cwebp
 
 Convert JPG and PNG images to WebP with grunt task.
 
@@ -9,18 +9,8 @@ Convert JPG and PNG images to WebP with grunt task.
 
 ## Install
 
-This plugin requires Grunt `~0.4.1`
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
-
 ```sh
 $ npm install --save-dev grunt-cwebp
-```
-
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
-
-```js
-grunt.loadNpmTasks('grunt-cwebp');
 ```
 
 ## Usage
@@ -32,7 +22,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     cwebp: {
       static: {
-        files: { 
+        files: {
           'dist/img-png.webp': 'src/img.png',
           'dist/img-jpg.webp': 'src/img.jpg',
           'dist/img-gif.webp': 'src/img.gif'
@@ -44,7 +34,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'src/', 
+          cwd: 'src/',
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/'
         }]
@@ -56,17 +46,8 @@ module.exports = function (grunt) {
 };
 ```
 
-Files are processed with [node-cwebp-bin](https://github.com/1000ch/node-cwebp-bin), you can also pass any native lib options, like `q`.
-
-## Options
-
-### sameExt
-
-Type: `Boolean`
-Default: `false`
-
-Set to `true`, if you want to leave original file extension after converting to webp.
+You can also pass the options like `q: 50`.
 
 ## License
 
-MIT: http://1000ch.mit-license.org
+[MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)

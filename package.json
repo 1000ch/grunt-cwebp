@@ -2,33 +2,37 @@
   "name": "grunt-cwebp",
   "version": "2.1.1",
   "description": "Convert JPG and PNG images to WebP with grunt task.",
-  "repository": "1000ch/grunt-cwebp",
-  "author": "1000ch",
-  "engines": {
-    "node": ">=4.0.0"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "bugs": {
-    "url": "https://github.com/1000ch/grunt-cwebp/issues"
-  },
-  "homepage": "https://github.com/1000ch/grunt-cwebp",
   "keywords": [
     "gruntplugin",
     "webp"
   ],
+  "homepage": "https://github.com/1000ch/grunt-cwebp",
+  "bugs": {
+    "url": "https://github.com/1000ch/grunt-cwebp/issues"
+  },
+  "repository": "1000ch/grunt-cwebp",
   "license": "MIT",
+  "author": {
+    "name": "Shogo Sensui",
+    "email": "shogosensui@gmail.com",
+    "web": "https://github.com/1000ch"
+  },
+  "scripts": {
+    "test": "xo && grunt test"
+  },
+  "xo": {
+    "space": 2
+  },
   "dependencies": {
-    "async": "^2.0.0",
-    "chalk": "^2.3.0",
     "cwebp-bin": "^3.2.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "replace-ext": "^2.0.0",
+    "xo": "^0.32.1"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-nodeunit": "^1.0.0"
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-nodeunit": "^2.1.0"
   }
 }

@@ -1,53 +1,37 @@
 'use strict';
-
+const {promisify} = require('util');
+const {execFile} = require('child_process');
 const path = require('path');
 const mkdirp = require('mkdirp');
-const async = require('async');
-const chalk = require('chalk');
-const execFile = require('child_process').execFile;
+const replaceExt = require('replace-ext');
 const cwebp = require('cwebp-bin');
+const execFileP = promisify(execFile);
 
 module.exports = grunt => {
-  grunt.registerMultiTask('cwebp', 'Convert JPG, PNG to WebP with grunt task.', function() {
+  grunt.registerMultiTask('cwebp', 'Convert JPG and PNG images to WebP', function () {
     const done = this.async();
     const options = this.options({});
-    const privateOptions = ['sameExt'];
 
-    async.eachLimit(this.files, 10, (file, next) => {
+    this.files.forEach(async file => {
       const src = file.src[0];
-      const dest = options.sameExt ? file.dest : file.dest.replace(path.extname(file.dest), '.webp');
+      const dest = replaceExt(file.dest, '.webp');
 
-      // make directory if does not exist
       mkdirp.sync(path.dirname(dest));
-
-      // create default args
       const args = [src, '-o', dest];
 
-      // add options to args
       Object.keys(options).forEach(key => {
-        // If options key is not private for Grunt task, pass in to lib args
-        if (privateOptions.indexOf(key) === -1) {
-          args.push(`-${key}`);
-          args.push(options[key]);
-        }
+        args.push(`-${key}`);
+        args.push(options[key]);
       });
 
-      execFile(cwebp, args, error => {
-        if (error) {
-          grunt.warn(error);
-          next(error);
-        } else {
-          grunt.verbose.writeln(chalk.green('✔ ') + src + ' was converted to ' + chalk.green(dest));
-          next();
-        }
-      });
-    }, error => {
-      if (error) {
+      try {
+        await execFileP(cwebp, args);
+        grunt.verbose.writeln(`✔ ${src} was converted to ${dest}`);
+      } catch (error) {
         grunt.warn(error);
-        done(error);
-      } else {
-        done();
       }
     });
+
+    done();
   });
 };
