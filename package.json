@@ -33,7 +33,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-nodeunit": "^2.1.0",
-    "xo": "^0.32.1"
+    "xo": "^0.33.0"
   },
   "engines": {
     "node": ">=10"
