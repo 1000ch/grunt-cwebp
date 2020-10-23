@@ -5,7 +5,10 @@ module.exports = function (grunt) {
     },
     cwebp: {
       static: {
-        options: {},
+        options: {
+          q: 50,
+          lossless: true
+        },
         files: {
           'tmp/static/test-png.webp': 'test/fixtures/test-png.png',
           'tmp/static/test-jpg.webp': 'test/fixtures/test-jpg.jpg'
@@ -21,7 +24,8 @@ module.exports = function (grunt) {
       },
       sameExt: {
         options: {
-          q: 50
+          q: 50,
+          lossless: true
         },
         files: [{
           expand: true,

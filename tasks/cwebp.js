@@ -5,6 +5,8 @@ const replaceExt = require('replace-ext');
 const cwebp = require('cwebp-bin');
 const execa = require('execa');
 
+const booleanFlags = new Set(['lossless', 'mt', 'low_memory', 'af', 'jpeg_like', 'strong', 'nostrong', 'sharp_yuv']);
+
 module.exports = grunt => {
   grunt.registerMultiTask('cwebp', 'Convert JPG and PNG images to WebP', function () {
     const done = this.async();
@@ -19,7 +21,10 @@ module.exports = grunt => {
 
       Object.keys(options).forEach(key => {
         args.push(`-${key}`);
-        args.push(options[key]);
+
+        if (!booleanFlags.has(key)) {
+          args.push(options[key]);
+        }
       });
 
       try {
