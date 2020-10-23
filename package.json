@@ -1,6 +1,6 @@
 {
   "name": "grunt-cwebp",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Convert JPG and PNG images to WebP with grunt task.",
   "keywords": [
     "gruntplugin",
