@@ -34,7 +34,7 @@
     "grunt-cli": "^1.4.3",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-nodeunit": "^3.0.0",
-    "xo": "^0.37.1"
+    "xo": "^0.44.0"
   },
   "peerDependencies": {
     "grunt": "^1.4.1"
