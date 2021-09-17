@@ -21,5 +21,5 @@ exports.cwebp = {
     test.expect(1);
     test.ok(fs.existsSync('tmp/dynamic/test-jpg.webp'), 'static: should convert JPG images');
     test.done();
-  }
+  },
 };

@@ -12,20 +12,20 @@ module.exports = grunt => {
     const done = this.async();
     const options = this.options({});
 
-    this.files.forEach(file => {
+    for (const file of this.files) {
       const src = file.src[0];
       const dest = replaceExt(file.dest, '.webp');
 
       mkdirp.sync(path.dirname(dest));
       const args = [src, '-o', dest];
 
-      Object.keys(options).forEach(key => {
+      for (const key of Object.keys(options)) {
         args.push(`-${key}`);
 
         if (!booleanFlags.has(key)) {
           args.push(options[key]);
         }
-      });
+      }
 
       try {
         execa.sync(cwebp, args);
@@ -33,7 +33,7 @@ module.exports = grunt => {
       } catch (error) {
         grunt.warn(error);
       }
-    });
+    }
 
     done();
   });

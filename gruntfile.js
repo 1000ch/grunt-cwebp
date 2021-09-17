@@ -1,43 +1,43 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     clean: {
-      test: ['tmp']
+      test: ['tmp'],
     },
     cwebp: {
       static: {
         options: {
           q: 50,
-          lossless: true
+          lossless: true,
         },
         files: {
           'tmp/static/test-png.webp': 'test/fixtures/test-png.png',
-          'tmp/static/test-jpg.webp': 'test/fixtures/test-jpg.jpg'
-        }
+          'tmp/static/test-jpg.webp': 'test/fixtures/test-jpg.jpg',
+        },
       },
       dynamic: {
         files: [{
           expand: true,
           cwd: 'test/fixtures',
           src: ['**/*.{png,jpg}'],
-          dest: 'tmp/dynamic'
-        }]
+          dest: 'tmp/dynamic',
+        }],
       },
       sameExt: {
         options: {
           q: 50,
-          lossless: true
+          lossless: true,
         },
         files: [{
           expand: true,
           cwd: 'test/fixtures',
           src: ['**/*.{png,jpg}'],
-          dest: 'tmp/same'
-        }]
-      }
+          dest: 'tmp/same',
+        }],
+      },
     },
     nodeunit: {
-      tests: ['test/test.js']
-    }
+      tests: ['test/test.js'],
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -49,6 +49,6 @@ module.exports = function (grunt) {
     'mkdir:tmp',
     'cwebp',
     'nodeunit',
-    'clean'
+    'clean',
   ]);
 };
