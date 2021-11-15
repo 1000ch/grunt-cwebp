@@ -27,7 +27,7 @@
     }
   },
   "dependencies": {
-    "cwebp-bin": "^6.1.1",
+    "cwebp-bin": "^7.0.1",
     "execa": "^5.0.0",
     "mkdirp": "^1.0.4",
     "replace-ext": "^2.0.0"
